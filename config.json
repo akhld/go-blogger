@@ -1,0 +1,20 @@
+[
+  {
+    "title": "First Post #1",
+    "content" :"path/to/md/file1",
+    "tags":["awesome-post", "what-post", "some-other-tag"],
+    "post":"my-first-post",
+    "author":"AkhlD",
+    "publishdate":"Day DD-Month-Year",
+    "seometa":"Random text to get it indexed"
+  },
+  {
+    "title": "Second Post #2",
+    "content" :"path/to/md/file2",
+    "tags":["second-awesome-post", "second-what-post", "second-some-other-tag"],
+    "post":"my-second-post",
+    "author":"AkhlD",
+    "publishdate":"Day DD-Month-Year",
+    "seometa":"Random text to get it indexed"
+  }
+]
