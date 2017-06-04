@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/assets/bootstrap-glyphicons.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/assets/w3.css" type="text/css">
-
 </head>
 
 <body>
@@ -66,7 +65,7 @@
 
                 <h1>{{.Title}}</h1>
 
-                <div>{{printf "%s" .Body}}</div>
+                <div>{{.Body}}</div>
 
             </div>
 
@@ -76,10 +75,24 @@
 
 </div>
 
+<br><br><br>
 <div class="navbar-fixed-bottom">
     <center><p><a href="https://hacked.work">&#169 hacked.work</p></a> </center>
 </div>
 
+<span class="navbar-fixed-bottom">
+    <a href="#top" class="well well-sm"  onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+        <i class="glyphicon glyphicon-chevron-up"></i> Back to Top
+    </a>
+</span>
+
+<script>
+        var imgs = document.getElementsByTagName("img");
+        var i =0;
+        for(i =0; i < imgs.length; i++){
+            imgs[i].style.width="100%";
+        }
+</script>
 
 </body>
 </html>

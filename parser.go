@@ -17,13 +17,28 @@ type PostsData struct {
 	Seometa string
 }
 
-func getPost(post string) (PostsData, error){
-	var data []PostsData
-	var postData PostsData
+func readConfig() ([]byte, error){
 	file, err := ioutil.ReadFile("config.json")
 	if err != nil {
 		log.Fatal(err)
 	}
+	return file, nil
+}
+
+func getPosts() ([]PostsData, error){
+	var data []PostsData
+	var file, err = readConfig()
+	err = json.Unmarshal(file, &data)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return data, nil
+}
+
+func getPost(post string) (PostsData, error){
+	var data []PostsData
+	var postData PostsData
+	var file, err = readConfig()
 	err = json.Unmarshal(file, &data)
 	if err != nil {
 		log.Fatal(err)
