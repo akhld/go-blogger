@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/assets/jquery.min.js"></script>
+    <script src="/assets/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/assets/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/assets/bootstrap-glyphicons.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/w3.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=0.51, maximum-scale=1" />
+</head>
+
+<body>
+<div id="wrap">
+
+    <div class="w3-container w3-black">
+        <center>
+            <h1>=[ Random stuffs! ]=</h1>
+            <p>Security. Big data. Machine Learning. Travel</p>
+            <hr class="divider">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li class="active"><a href="/blog/">Posts</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                        <form name="searcher" class="navbar-form navbar-right">
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search something?"
+                                               style="background-color: black">
+                                        <span class="input-group-addon" onclick="searcher.submit()"
+                                              style="background-color: black">
+						                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+						            </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </center>
+    </div>
+
+    <div class="w3-row-padding">
+        <div class="content">
+
+                <h1>{{.Title}}</h1>
+
+                <div class="post-meta" style="color: #767676;">
+                    <p>Posted by {{.Author}} on {{.PublishDate}}</p>
+                </div>
+
+                <div>{{.Body}}</div>
+
+                <div class="entry-meta" style="color: #767676;">
+                    <span class="tag-links">
+                        {{.Tags}}
+                    </span>
+                </div>
+
+
+
+        </div>
+    </div>
+
+
+</div>
+
+<br><br><br>
+<div id="footer">
+    <center><p><a href="https://hacked.work">&#169 hacked.work</p></a> </center>
+</div>
+
+<span class="navbar-fixed-bottom">
+    <a href="#top" class="well well-sm"  onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+        <i class="glyphicon glyphicon-chevron-up"></i> Back to Top
+    </a>
+</span>
+
+<script>
+        var imgs = document.getElementsByTagName("img");
+        var i =0;
+        for(i =0; i < imgs.length; i++){
+            imgs[i].style.width="100%";
+        }
+</script>
+
+</body>
+</html>

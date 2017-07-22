@@ -16,6 +16,14 @@ Title string
 Body  template.HTML
 }
 
+type Post struct {
+	Title string
+	Body template.HTML
+	Author string
+	PublishDate string
+	Tags template.HTML
+}
+
 func loadPage(title string) (*Page, error) {
 	filename := "./index.html"
 	body, err := ioutil.ReadFile(filename)
@@ -25,10 +33,18 @@ func loadPage(title string) (*Page, error) {
 	return &Page{Title: title, Body: template.HTML(string(body))}, nil
 }
 
-func loadPosts(post string) (*Page, error) {
+func loadPosts(post string) (*Post, error) {
 	postData, _ := getPost(post)
 	body, _ := readContents(postData.Content)
-	return &Page{Title: postData.Title, Body: template.HTML(string(body))}, nil
+	var tags bytes.Buffer
+	for i := 0; i < len(postData.Tags); i++ {
+		tags.WriteString("<a href=\"" + postData.Tags[i] + "\">" + postData.Tags[i] +  "</a>")
+	}
+	return &Post{Title: postData.Title,
+		Body: template.HTML(string(body)),
+		Author:postData.Author,
+		PublishDate: postData.Publishdate,
+		Tags: template.HTML(tags.String()) }, nil
 }
 
 func readContents(path string) ([]byte, error) {
@@ -64,7 +80,7 @@ func blogHandler(w http.ResponseWriter, r *http.Request) {
 		t.Execute(w, p)
 	}else{
 		p, _ := loadPosts(title)
-		t, _ := template.ParseFiles("blog.html")
+		t, _ := template.ParseFiles("blog-post.html")
 		t.Execute(w, p)
 	}
 }
