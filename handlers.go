@@ -5,7 +5,6 @@ import (
 	"net/http"
 	"strings"
 	"bytes"
-	"fmt"
 	"html/template"
 	"log"
 	"github.com/russross/blackfriday"
@@ -86,6 +85,5 @@ func blogHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-	p, _ := loadPage("Home")
-	fmt.Fprintf(w, "%s", template.HTML(string(p.Body)))
+	http.Redirect(w, r, "/blog/", http.StatusSeeOther)
 }
