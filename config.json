@@ -1,6 +1,15 @@
 [
   {
-    "title": "WRITING A SIMPLE HTTP/2 SERVER IN GO",
+    "title": "Why your organization should start using Apache Mesos",
+    "content" :"posts/organization-start-using-apache-mesos.md",
+    "tags":["introduction-to-apache-mesos"],
+    "post":"apache-mesos-usecase",
+    "author":"AkhlD",
+    "publishdate":"April 01, 2017",
+    "seometa":"Random text to get it indexed"
+  },
+  {
+    "title": "Writing a simple HTTP/2 server in GO",
     "content" :"posts/go-http2-server.md",
     "tags":["go-http2-server", "go-https-server"],
     "post":"writing-simple-http2-server-go",
