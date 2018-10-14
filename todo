@@ -1,9 +1,0 @@
-- Parse index.html template for every request !
-- Define a config file !
-- Read config file for request !
-- Match main or tag for request !
-- Pull the content, attach it to the .content div !
-- Attach Author, publish date, seo-meta
-- Handle edge cases: 404, 503
-- Respond
-
