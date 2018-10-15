@@ -12,7 +12,8 @@ Visit http://localhost:8080 after running.
 
 ### Adding / Editing blog posts
 - Write the post in a markdown file
-- Edit the config.json file
+- Edit the config.json file.
+
 Example config for a post
 ```
 {
